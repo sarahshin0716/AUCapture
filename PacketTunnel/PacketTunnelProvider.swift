@@ -59,15 +59,12 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         }
     }
 
-    private func handleTCPPacket(_ packet: IPPacket) {
-        // For now, for the sake of simplicity, TCP packets are not handled.
-    }
+    private func handleTCPPacket(_ packet: IPPacket) {}
 
     private func sendUDPPacket(_ packet: IPPacket) {
         let key = "\(packet.source):\(packet.sourcePort) => \(packet.destination):\(packet.destinationPort)"
         NSLog("SEND: \(key) \(packet.payload.hex)")
-        sendPacketDump(packet.payload)
-
+        
         if let session = self.udpSessions[key] {
             session.send(packet.payload)
         } else {
@@ -89,8 +86,18 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 )
 
                 NSLog("RECV: \(packet.source):\(packet.sourcePort) => \(packet.destination):\(packet.destinationPort) \(data.hex)")
-                sendPacketDump(data)
-
+                let udpPacket = packet.payload
+                let replyQ = udpPacket.withUnsafeBytes { buf -> UnsafeMutablePointer<dns_reply_t>? in
+                    // Many C APIs, including this one, use `char` values for raw bytes.  On
+                    // Apple platforms `char` is equivalent to `SInt8`.  However, on the
+                    // Swift side we typically use `UInt8` for raw bytes and thus so we have
+                    // to do an ugly cast.
+                    let base = buf.baseAddress!.assumingMemoryBound(to: Int8.self)
+                    return dns_parse_packet(base, UInt32(buf.count))
+                }
+                guard let reply = replyQ else { fatalError("parse failed") }
+                printDnsReply(reply.pointee)
+              
                 self.packetFlow.writePacketObjects([
                     NEPacket(
                         data: packet.packetData,
@@ -107,11 +114,29 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     }
 }
 
-private func sendPacketDump(_ data: Data) {
+private func sendPacketDump(_ key: String, _ data: Data) {
     let container = AppGroup.container
     let file = container.appendingPathComponent("capture_state")
     let fileCoordinator = NSFileCoordinator()
     fileCoordinator.coordinate(writingItemAt: file, options: [], error: nil) { (file) in
-        try? data.hex.write(to: file, atomically: false, encoding: .utf8)
+        try? key.write(to: file, atomically: false, encoding: .utf8)
     }
+}
+
+private func printDnsReply(_ reply: dns_reply_t) {
+    guard var question = reply.question.pointee?.pointee.name else { fatalError("error") }
+    let domain = String.init(cString: question)
+
+    let anCount: Int = Int(reply.header.pointee.ancount)
+    var IPs = [String]()
+    for i in 0..<anCount {
+        guard let record = reply.answer[i] else { continue }
+        IPs.append(getDnsAns(record))
+    }
+    sendPacketDump("domain: \(domain), IPs: \(IPs)", Data())
+//    sendPacketDump("status: \(reply.status)\nheader: \(reply.header.pointee)\nquestion: \(reply.question.pointee)\nans: \(reply.answer.pointee)\n", Data())
+}
+
+private func getDnsAns(_ ans: UnsafeMutablePointer<dns_resource_record_t>) -> String {
+    return String.init(cString: inet_ntoa(ans.pointee.data.A.pointee.addr))
 }

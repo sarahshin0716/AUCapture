@@ -29,6 +29,7 @@
 		149E74A126E265E60070330E /* ByteBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E74A026E265E60070330E /* ByteBuffer.swift */; };
 		149E74A326E266F70070330E /* IPPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E74A226E266F70070330E /* IPPacket.swift */; };
 		149E74CB26E28DF10070330E /* Checksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E74CA26E28DF10070330E /* Checksum.swift */; };
+		7EB9283F291CC137007846D0 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB9283B291CC0FC007846D0 /* libresolv.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,11 @@
 		149E74A026E265E60070330E /* ByteBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ByteBuffer.swift; sourceTree = "<group>"; };
 		149E74A226E266F70070330E /* IPPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPPacket.swift; sourceTree = "<group>"; };
 		149E74CA26E28DF10070330E /* Checksum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checksum.swift; sourceTree = "<group>"; };
+		7EB92835291CBCED007846D0 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		7EB92836291CC09A007846D0 /* libmdns.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libmdns.tbd; path = usr/lib/libmdns.tbd; sourceTree = SDKROOT; };
+		7EB92839291CC0BB007846D0 /* libdns_services.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libdns_services.tbd; path = usr/lib/libdns_services.tbd; sourceTree = SDKROOT; };
+		7EB9283B291CC0FC007846D0 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		7EB9283C291CC0FC007846D0 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EB9283F291CC137007846D0 /* libresolv.tbd in Frameworks */,
 				149E748B26E24FA60070330E /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +158,10 @@
 		149E748926E24FA60070330E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7EB9283C291CC0FC007846D0 /* libresolv.9.tbd */,
+				7EB9283B291CC0FC007846D0 /* libresolv.tbd */,
+				7EB92839291CC0BB007846D0 /* libdns_services.tbd */,
+				7EB92836291CC09A007846D0 /* libmdns.tbd */,
 				149E748A26E24FA60070330E /* NetworkExtension.framework */,
 			);
 			name = Frameworks;
@@ -167,6 +178,7 @@
 				149E74A026E265E60070330E /* ByteBuffer.swift */,
 				149E749026E24FA60070330E /* PacketTunnel.entitlements */,
 				149E748F26E24FA60070330E /* Info.plist */,
+				7EB92835291CBCED007846D0 /* Bridging-Header.h */,
 			);
 			path = PacketTunnel;
 			sourceTree = "<group>";
@@ -458,13 +470,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AUCapture/AUCapture.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 27AEDK3C9F;
+				DEVELOPMENT_TEAM = 43JNMFY94M;
 				INFOPLIST_FILE = AUCapture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kishikawakatsumi.AUCapture;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.fairytech.monda2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -479,13 +491,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AUCapture/AUCapture.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 27AEDK3C9F;
+				DEVELOPMENT_TEAM = 43JNMFY94M;
 				INFOPLIST_FILE = AUCapture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kishikawakatsumi.AUCapture;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.fairytech.monda2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -497,16 +509,17 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 27AEDK3C9F;
+				DEVELOPMENT_TEAM = 43JNMFY94M;
 				INFOPLIST_FILE = PacketTunnel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kishikawakatsumi.AUCapture.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.fairytech.monda2.packet-tunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PacketTunnel/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -517,16 +530,17 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 27AEDK3C9F;
+				DEVELOPMENT_TEAM = 43JNMFY94M;
 				INFOPLIST_FILE = PacketTunnel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kishikawakatsumi.AUCapture.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.fairytech.monda2.packet-tunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PacketTunnel/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

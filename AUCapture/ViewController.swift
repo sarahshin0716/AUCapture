@@ -86,7 +86,7 @@ final class ViewController: UITableViewController {
 
                 let tunnelProtocol = NETunnelProviderProtocol()
                 tunnelProtocol.serverAddress = "localhost"
-                tunnelProtocol.providerBundleIdentifier = "com.kishikawakatsumi.AUCapture.PacketTunnel"
+                tunnelProtocol.providerBundleIdentifier = "ai.fairytech.monda2.packet-tunnel"
                 tunnelProtocol.disconnectOnSleep = false
 
                 self.manager?.protocolConfiguration = tunnelProtocol
@@ -121,6 +121,7 @@ final class ViewController: UITableViewController {
         if sender.isOn {
             installProfile()
         } else {
+            print("stop???")
             manager?.connection.stopVPNTunnel()
         }
     }
