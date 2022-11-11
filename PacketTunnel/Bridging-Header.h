@@ -11,4 +11,13 @@
 #include <dns.h>
 #include <dns_util.h>
 
+#include "stdlib.h"
+#include "SystemUtils.h"
+#include "Packet.h"
+#include "EthLayer.h"
+#include "IPv4Layer.h"
+#include "TcpLayer.h"
+#include "HttpLayer.h"
+#include "PcapFileDevice.h"
+
 #endif /* Bridging_Header_h */

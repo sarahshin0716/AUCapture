@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		14717CA926F5089C00C8F3E8 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14717CA826F5089C00C8F3E8 /* AppGroup.swift */; };
 		14717CAA26F508AC00C8F3E8 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14717CA826F5089C00C8F3E8 /* AppGroup.swift */; };
 		14717CAB26F5091D00C8F3E8 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E749A26E25C5F0070330E /* Util.swift */; };
-		14717CAD26F50E7600C8F3E8 /* AmongUsProtocol in Frameworks */ = {isa = PBXBuildFile; productRef = 14717CAC26F50E7600C8F3E8 /* AmongUsProtocol */; };
 		149E747126E24EB70070330E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E747026E24EB70070330E /* AppDelegate.swift */; };
 		149E747326E24EB70070330E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E747226E24EB70070330E /* SceneDelegate.swift */; };
 		149E747526E24EB70070330E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E747426E24EB70070330E /* ViewController.swift */; };
@@ -21,7 +20,7 @@
 		149E747D26E24EB80070330E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149E747B26E24EB80070330E /* LaunchScreen.storyboard */; };
 		149E748B26E24FA60070330E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149E748A26E24FA60070330E /* NetworkExtension.framework */; };
 		149E748E26E24FA60070330E /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E748D26E24FA60070330E /* PacketTunnelProvider.swift */; };
-		149E749326E24FA60070330E /* PacketTunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 149E748826E24FA60070330E /* PacketTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		149E749326E24FA60070330E /* PacketTunnel.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 149E748826E24FA60070330E /* PacketTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		149E749926E256760070330E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149E748A26E24FA60070330E /* NetworkExtension.framework */; };
 		149E749B26E25C5F0070330E /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E749A26E25C5F0070330E /* Util.swift */; };
 		149E749E26E265060070330E /* TCPSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E749C26E265060070330E /* TCPSession.swift */; };
@@ -29,6 +28,17 @@
 		149E74A126E265E60070330E /* ByteBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E74A026E265E60070330E /* ByteBuffer.swift */; };
 		149E74A326E266F70070330E /* IPPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E74A226E266F70070330E /* IPPacket.swift */; };
 		149E74CB26E28DF10070330E /* Checksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E74CA26E28DF10070330E /* Checksum.swift */; };
+		7E0EC38D291D1853006DF718 /* TCPPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0EC38C291D1853006DF718 /* TCPPacket.swift */; };
+		7E0EC391291E0DA1006DF718 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0EC390291E0DA1006DF718 /* SystemConfiguration.framework */; };
+		7E0EC393291E0DAB006DF718 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0EC392291E0DAB006DF718 /* CoreFoundation.framework */; };
+		7E0EC397291E0DCD006DF718 /* libPacket++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0EC394291E0DCD006DF718 /* libPacket++.a */; };
+		7E0EC398291E0DCD006DF718 /* libCommon++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0EC395291E0DCD006DF718 /* libCommon++.a */; };
+		7E0EC399291E0DCD006DF718 /* libPcap++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0EC396291E0DCD006DF718 /* libPcap++.a */; };
+		7E0EC39A291E0E32006DF718 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0EC390291E0DA1006DF718 /* SystemConfiguration.framework */; };
+		7E0EC39B291E0E39006DF718 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0EC392291E0DAB006DF718 /* CoreFoundation.framework */; };
+		7E0EC39C291E0E44006DF718 /* libCommon++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0EC395291E0DCD006DF718 /* libCommon++.a */; };
+		7E0EC39D291E0E44006DF718 /* libPacket++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0EC394291E0DCD006DF718 /* libPacket++.a */; };
+		7E0EC39E291E0E44006DF718 /* libPcap++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0EC396291E0DCD006DF718 /* libPcap++.a */; };
 		7EB9283F291CC137007846D0 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB9283B291CC0FC007846D0 /* libresolv.tbd */; };
 		7EB96CFB291CEC75007846D0 /* IOTunnel-windows.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7EB96B9B291CEC73007846D0 /* IOTunnel-windows.cpp */; };
 		7EB96CFC291CEC75007846D0 /* IOTunnel-iOS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7EB96B9C291CEC73007846D0 /* IOTunnel-iOS.cpp */; };
@@ -170,15 +180,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		149E749726E24FA60070330E /* Embed App Extensions */ = {
+		149E749726E24FA60070330E /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				149E749326E24FA60070330E /* PacketTunnel.appex in Embed App Extensions */,
+				149E749326E24FA60070330E /* PacketTunnel.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7EB92B79291CEBE3007846D0 /* CopyFiles */ = {
@@ -216,6 +226,12 @@
 		149E74A026E265E60070330E /* ByteBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ByteBuffer.swift; sourceTree = "<group>"; };
 		149E74A226E266F70070330E /* IPPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPPacket.swift; sourceTree = "<group>"; };
 		149E74CA26E28DF10070330E /* Checksum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checksum.swift; sourceTree = "<group>"; };
+		7E0EC38C291D1853006DF718 /* TCPPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPPacket.swift; sourceTree = "<group>"; };
+		7E0EC390291E0DA1006DF718 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7E0EC392291E0DAB006DF718 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		7E0EC394291E0DCD006DF718 /* libPacket++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPacket++.a"; path = "../PcapPlusPlus/Dist/libPacket++.a"; sourceTree = "<group>"; };
+		7E0EC395291E0DCD006DF718 /* libCommon++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCommon++.a"; path = "../PcapPlusPlus/Dist/libCommon++.a"; sourceTree = "<group>"; };
+		7E0EC396291E0DCD006DF718 /* libPcap++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPcap++.a"; path = "../PcapPlusPlus/Dist/libPcap++.a"; sourceTree = "<group>"; };
 		7EB92835291CBCED007846D0 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		7EB92836291CC09A007846D0 /* libmdns.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libmdns.tbd; path = usr/lib/libmdns.tbd; sourceTree = SDKROOT; };
 		7EB92839291CC0BB007846D0 /* libdns_services.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libdns_services.tbd; path = usr/lib/libdns_services.tbd; sourceTree = SDKROOT; };
@@ -527,8 +543,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E0EC397291E0DCD006DF718 /* libPacket++.a in Frameworks */,
+				7E0EC398291E0DCD006DF718 /* libCommon++.a in Frameworks */,
+				7E0EC399291E0DCD006DF718 /* libPcap++.a in Frameworks */,
+				7E0EC393291E0DAB006DF718 /* CoreFoundation.framework in Frameworks */,
+				7E0EC391291E0DA1006DF718 /* SystemConfiguration.framework in Frameworks */,
 				149E749926E256760070330E /* NetworkExtension.framework in Frameworks */,
-				14717CAD26F50E7600C8F3E8 /* AmongUsProtocol in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +556,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E0EC39C291E0E44006DF718 /* libCommon++.a in Frameworks */,
+				7E0EC39D291E0E44006DF718 /* libPacket++.a in Frameworks */,
+				7E0EC39E291E0E44006DF718 /* libPcap++.a in Frameworks */,
+				7E0EC39B291E0E39006DF718 /* CoreFoundation.framework in Frameworks */,
+				7E0EC39A291E0E32006DF718 /* SystemConfiguration.framework in Frameworks */,
 				7EB9283F291CC137007846D0 /* libresolv.tbd in Frameworks */,
 				149E748B26E24FA60070330E /* NetworkExtension.framework in Frameworks */,
 			);
@@ -602,6 +627,11 @@
 		149E748926E24FA60070330E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E0EC395291E0DCD006DF718 /* libCommon++.a */,
+				7E0EC394291E0DCD006DF718 /* libPacket++.a */,
+				7E0EC396291E0DCD006DF718 /* libPcap++.a */,
+				7E0EC392291E0DAB006DF718 /* CoreFoundation.framework */,
+				7E0EC390291E0DA1006DF718 /* SystemConfiguration.framework */,
 				7EB9283C291CC0FC007846D0 /* libresolv.9.tbd */,
 				7EB9283B291CC0FC007846D0 /* libresolv.tbd */,
 				7EB92839291CC0BB007846D0 /* libdns_services.tbd */,
@@ -614,8 +644,8 @@
 		149E748C26E24FA60070330E /* PacketTunnel */ = {
 			isa = PBXGroup;
 			children = (
-				149E748D26E24FA60070330E /* PacketTunnelProvider.swift */,
 				149E74A226E266F70070330E /* IPPacket.swift */,
+				149E748D26E24FA60070330E /* PacketTunnelProvider.swift */,
 				149E74CA26E28DF10070330E /* Checksum.swift */,
 				149E749C26E265060070330E /* TCPSession.swift */,
 				149E749D26E265060070330E /* UDPSession.swift */,
@@ -623,6 +653,7 @@
 				149E749026E24FA60070330E /* PacketTunnel.entitlements */,
 				149E748F26E24FA60070330E /* Info.plist */,
 				7EB92835291CBCED007846D0 /* Bridging-Header.h */,
+				7E0EC38C291D1853006DF718 /* TCPPacket.swift */,
 			);
 			path = PacketTunnel;
 			sourceTree = "<group>";
@@ -1390,7 +1421,7 @@
 				149E746926E24EB70070330E /* Sources */,
 				149E746A26E24EB70070330E /* Frameworks */,
 				149E746B26E24EB70070330E /* Resources */,
-				149E749726E24FA60070330E /* Embed App Extensions */,
+				149E749726E24FA60070330E /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -1400,7 +1431,6 @@
 			);
 			name = AUCapture;
 			packageProductDependencies = (
-				14717CAC26F50E7600C8F3E8 /* AmongUsProtocol */,
 			);
 			productName = AUCapture;
 			productReference = 149E746D26E24EB70070330E /* AUCapture.app */;
@@ -1448,8 +1478,13 @@
 		149E746526E24EB70070330E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+<<<<<<< Updated upstream
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1250;
+=======
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1410;
+>>>>>>> Stashed changes
 				TargetAttributes = {
 					149E746C26E24EB70070330E = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -1473,7 +1508,6 @@
 			);
 			mainGroup = 149E746426E24EB70070330E;
 			packageReferences = (
-				149E760526E3AE5F0070330E /* XCRemoteSwiftPackageReference "AmongUsProtocol" */,
 			);
 			productRefGroup = 149E746E26E24EB70070330E /* Products */;
 			projectDirPath = "";
@@ -1530,6 +1564,7 @@
 				149E749E26E265060070330E /* TCPSession.swift in Sources */,
 				149E74A126E265E60070330E /* ByteBuffer.swift in Sources */,
 				149E74A326E266F70070330E /* IPPacket.swift in Sources */,
+				7E0EC38D291D1853006DF718 /* TCPPacket.swift in Sources */,
 				149E748E26E24FA60070330E /* PacketTunnelProvider.swift in Sources */,
 				149E749B26E25C5F0070330E /* Util.swift in Sources */,
 				14717CAA26F508AC00C8F3E8 /* AppGroup.swift in Sources */,
@@ -1704,8 +1739,12 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+<<<<<<< Updated upstream
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
+=======
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+>>>>>>> Stashed changes
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1737,6 +1776,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1749,13 +1789,21 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-L/usr/local/lib",
+					"-lpcap",
+					"-lpthread",
+					"$(inherited)",
+				);
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SYSTEM_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -1765,8 +1813,12 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+<<<<<<< Updated upstream
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
+=======
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+>>>>>>> Stashed changes
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1797,6 +1849,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -1804,12 +1857,20 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"-L/usr/local/lib",
+					"-lpcap",
+					"-lpthread",
+					"$(inherited)",
+				);
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SYSTEM_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1820,9 +1881,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_ENTITLEMENTS = AUCapture/AUCapture.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 43JNMFY94M;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				INFOPLIST_FILE = AUCapture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1841,9 +1904,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_ENTITLEMENTS = AUCapture/AUCapture.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 43JNMFY94M;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				INFOPLIST_FILE = AUCapture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1859,42 +1924,80 @@
 		149E749526E24FA60070330E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				COPY_HEADERS_RUN_UNIFDEF = NO;
 				DEVELOPMENT_TEAM = 43JNMFY94M;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_INPUT_FILETYPE = automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = PacketTunnel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"/usr/local/lib/**",
+					"/usr/lib/**",
+				);
+				OTHER_LDFLAGS = (
+					"-L/usr/local/lib",
+					"-lpcap",
+					"-lpthread",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ai.fairytech.monda2.packet-tunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "PacketTunnel/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include/pcapplusplus;
+				USE_HEADERMAP = NO;
 			};
 			name = Debug;
 		};
 		149E749626E24FA60070330E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				COPY_HEADERS_RUN_UNIFDEF = NO;
 				DEVELOPMENT_TEAM = 43JNMFY94M;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_INPUT_FILETYPE = automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = PacketTunnel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"/usr/local/lib/**",
+					"/usr/lib/**",
+				);
+				OTHER_LDFLAGS = (
+					"-L/usr/local/lib",
+					"-lpcap",
+					"-lpthread",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ai.fairytech.monda2.packet-tunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "PacketTunnel/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include/pcapplusplus;
+				USE_HEADERMAP = NO;
 			};
 			name = Release;
 		};
@@ -1983,25 +2086,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		149E760526E3AE5F0070330E /* XCRemoteSwiftPackageReference "AmongUsProtocol" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kishikawakatsumi/AmongUsProtocol.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		14717CAC26F50E7600C8F3E8 /* AmongUsProtocol */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 149E760526E3AE5F0070330E /* XCRemoteSwiftPackageReference "AmongUsProtocol" */;
-			productName = AmongUsProtocol;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 149E746526E24EB70070330E /* Project object */;
 }

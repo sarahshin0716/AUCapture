@@ -34,6 +34,7 @@ struct IPPacket {
         id = 0
         checksum = 0
 
+        // Don't know options field size yet, so set it as 8 bytes by default.
         let bytesLength = payload.count + 8
         packetData = Data(count: Int(headerLength) + bytesLength)
         self.payload = payload
@@ -101,7 +102,7 @@ struct IPPacket {
         sourcePort = buffer.read(UInt16.self)
         destinationPort = buffer.read(UInt16.self)
     }
-
+    
     private mutating func setPayloadWithUInt8(_ value: UInt8, at: Int) {
         var v = value
         withUnsafeBytes(of: &v) {
@@ -195,6 +196,10 @@ extension IPPacket: CustomStringConvertible {
 public enum IPVersion: UInt8, CustomStringConvertible {
     case ipv4 = 4, ipv6 = 6
     public var description: String { "\(rawValue)" }
+}
+
+public enum TCPFlag: UInt8 {
+    case syn = 1, ack = 2, rst = 3, fin = 4, psh = 5, urg = 6
 }
 
 enum Protocol: UInt8, CustomStringConvertible {

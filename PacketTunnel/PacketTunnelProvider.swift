@@ -59,7 +59,38 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         }
     }
 
-    private func handleTCPPacket(_ packet: IPPacket) {}
+    private func handleTCPPacket(_ packet: IPPacket) {
+        let header = packet.tcpHeader
+            if header.isSyn {
+                packetFlow.writePacketObjects(
+                    packetBuilder.replySynAck()
+                )
+            } else if header.isAck {
+                
+                if packet.data.count > 0 {
+                    tcpSession.send(packet)
+                    
+                    tcpSession.onReceive { [self] (data) in
+                        packetflow.writePacketObjects(
+                            [
+                                NEPacket(
+                                    data: data,
+                                    protocolFamily: sa_family_t(AF_INET)
+                                )
+                            ]
+                        )
+                    }
+                } else {
+                    packetFlow.writePacketObjects(
+                        packetBuilder.ackFinAck()
+                    )
+                }
+            } else if header.isFin {
+                packetFlow.writePacketObjects(packetBuilder.ackFinAck())
+            } else if header.isRst {
+                packetFlow.writePacketObjects(packetBuilder.reset())
+            }
+    }
 
     private func sendUDPPacket(_ packet: IPPacket) {
         let key = "\(packet.source):\(packet.sourcePort) => \(packet.destination):\(packet.destinationPort)"
